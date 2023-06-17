@@ -182,9 +182,48 @@ create table tb_produto(
     preco_produto varchar(10000)
 );
 
+create table tb_materia(
+	id_materia int primary key auto_increment,
+    nome_materia varchar(255) not null,
+    tipo_materia varchar(255) not null,
+    preco_materia varchar(10000) not null,
+    disponibilidade boolean not null,
+    descricao varchar (255),
+	id_forn int not null, 
+    foreign key(id_forn) references tb_fornecedores(id_forn)
+);
 
 describe tb_clientes;
 describe tb_fornecedores;
 describe tb_produtos;
 describe tb_usuarios;
 describe tb_venda;
+describe tb_materia;
+
+
+alter table tb_materia
+	modify column disponibilidade varchar(25) NOT NULL;
+    
+alter table tb_materia
+	add column nome_forn varchar(100);
+    
+create table tb_contas(
+	id_conta int primary key auto_increment,
+    descricao varchar(255) not null,
+    valor varchar(10000) not null,
+    dt_validade timestamp,
+    situacao varchar (255),
+	id_forn int not null, 
+    foreign key(id_forn) references tb_fornecedores(id_forn)
+);
+
+alter table tb_contas
+	add column cnpj_forn varchar(14);
+    
+alter table tb_contas
+	add column razao_forn varchar(100);    
+    
+alter table tb_contas
+	modify column dt_validade date;
+    
+describe tb_contas;

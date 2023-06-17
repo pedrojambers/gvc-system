@@ -184,8 +184,12 @@ public class TelaInternaClientes extends javax.swing.JInternalFrame {
     }
 
     private void remover() {
+        double soma = 0;
+        for(int i = 0; i < tbl_pendencias.getRowCount(); i++){
+            soma = soma + Double.parseDouble(tbl_pendencias.getValueAt(i, 5).toString());
+        }
         int confirma = JOptionPane.showConfirmDialog(null, "Deseja realmente remover?", "Atenção!", JOptionPane.YES_NO_OPTION);
-        if (confirma == JOptionPane.YES_OPTION) {
+        if (confirma == JOptionPane.YES_OPTION && soma == 0) {
             String sql = "delete from tb_clientes where id_cliente = ?";
             try {
                 ps = conexao.prepareStatement(sql);
@@ -200,6 +204,8 @@ public class TelaInternaClientes extends javax.swing.JInternalFrame {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Cliente possui pendências!");
         }
     }
 
