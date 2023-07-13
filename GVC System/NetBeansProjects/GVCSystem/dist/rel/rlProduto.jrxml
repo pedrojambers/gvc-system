@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GVCSystem" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d62b354-5ff2-4cb2-aea9-af6fdbd93264">
+	<property name="ireport.zoom" value="1.5000000000000093"/>
+	<property name="ireport.x" value="44"/>
+	<property name="ireport.y" value="62"/>
+	<style name="alternativeRowColor">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 1]]></conditionExpression>
+			<style backcolor="#F0F0F0"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select * from tb_produtos order by id_produto]]>
+	</queryString>
+	<field name="id_produto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_produto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="acabamento_produto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rolo_produto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gramatura_produto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="peso_produto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="preco_produto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH:mm:ss">
+				<reportElement x="489" y="54" width="66" height="11" uuid="4df2e1c4-d7ca-4c40-8aae-3e0968cf87f7"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="428" y="54" width="61" height="11" uuid="d19d983b-68c7-4697-9a9f-3cd84ce9de16"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de emissão:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="12" y="0" width="148" height="54" uuid="d69e70ec-355e-4e7d-95d9-6e1496778ab7"/>
+				<imageExpression><![CDATA["C:\\Users\\Pedro\\Desktop\\Estágio Supervisionado I\\GVC System\\NetBeansProjects\\GVCSystem\\src\\gvcsystem\\img\\logo_gv.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="13" forecolor="#FFFFFF" backcolor="#C8C8C8" uuid="f8c3a709-0de0-4de6-9109-87b9d9badd42"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="229" y="1" width="96" height="10" uuid="4e71c7a1-be79-4380-8374-b2c3f0a3e248"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE PRODUTOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="10" splitType="Stretch">
+			<staticText>
+				<reportElement x="158" y="0" width="100" height="10" uuid="27b8c28c-f5de-40ca-b71c-77c110679ac0"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACABAMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="22" height="10" uuid="6a479f8e-4a77-4726-8208-9a22eea2f777"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="0" width="126" height="10" uuid="9fbd23d3-bca9-4003-9ded-f9900c9cb764"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="0" width="46" height="10" uuid="7bca2254-5402-44c8-a471-c184d7471e5e"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAM. ROLO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="0" width="46" height="10" uuid="4f2bac3f-6537-4059-ab20-49e8032d2b2f"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRAMATURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="0" width="27" height="10" uuid="c14197e2-676d-41f4-b58b-1c6af97c5583"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PESO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="517" y="0" width="38" height="10" uuid="4720c03a-162c-47a7-8fa8-5b4ccc64e36c"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREÇO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="10" splitType="Stretch">
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="0" y="0" width="22" height="10" uuid="82524968-8193-47e9-8687-4ce50a8f4f17"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="22" y="0" width="136" height="10" uuid="d030b89d-af74-4b60-ac97-25bb4dad1032"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="158" y="0" width="115" height="10" uuid="bb288bf1-3f6b-46a2-8512-c51d7bbf943e"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{acabamento_produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="273" y="0" width="72" height="10" uuid="8fa05d42-2df0-4fda-8022-0dad0612cafc"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rolo_produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="345" y="0" width="70" height="10" uuid="b7dd3b4f-922f-4cd8-a38f-fd54455f242d"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gramatura_produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="415" y="0" width="53" height="10" uuid="938b3144-ff5a-4cc6-8a9b-d318bfc11a6d"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{peso_produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="468" y="0" width="87" height="10" uuid="5fe4b1a1-df6a-4ccb-82b2-5f9d6aef7849"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{preco_produto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="73" splitType="Stretch">
+			<image>
+				<reportElement x="59" y="45" width="39" height="28" uuid="c0386246-2d5d-4328-b571-8d2ea87bd846"/>
+				<imageExpression><![CDATA["C:\\Users\\Pedro\\Desktop\\Estágio Supervisionado I\\GVC System\\NetBeansProjects\\GVCSystem\\src\\gvcsystem\\img\\gvc_system_logo_bg.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="455" y="53" width="100" height="20" backcolor="#CCCCCC" uuid="a2db22a4-27a0-4580-881a-50c4196811ee"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="227" y="45" width="100" height="14" uuid="f9f66653-98fa-405b-a4f9-a11ddf2eec76"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AV AMÉRICA, 1767]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="59" width="135" height="14" uuid="0bd3e92a-b0a0-4700-ab09-bb28c761733d"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIANORTE-PR  -  CEP: 87205-076]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="68" height="14" forecolor="#808080" uuid="304930f7-931f-46a3-974c-7416fd1d9493"/>
+				<textElement>
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Gerado por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="68" height="14" forecolor="#808080" uuid="9945b189-d911-45f7-bfbc-7b4031f710df"/>
+				<textElement>
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[GVC System]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="-20" y="34" width="595" height="1" uuid="2e73177a-0a9b-4013-b104-4e4efdeb7f69"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

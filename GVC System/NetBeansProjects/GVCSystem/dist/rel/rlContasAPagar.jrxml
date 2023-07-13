@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GVCSystem" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d62b354-5ff2-4cb2-aea9-af6fdbd93264">
+	<property name="ireport.zoom" value="1.9487171000000154"/>
+	<property name="ireport.x" value="363"/>
+	<property name="ireport.y" value="177"/>
+	<style name="alternativeRowColor">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 1]]></conditionExpression>
+			<style backcolor="#F0F0F0"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="data_1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="data_2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     tb_contas
+WHERE
+     situacao = 'não']]>
+	</queryString>
+	<field name="id_conta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dt_validade" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_forn" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cnpj_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="razao_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="TOTAL_COUNT" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{valor}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<image>
+				<reportElement x="203" y="0" width="148" height="54" uuid="a2404a6e-58c7-4a67-be20-e997e38602e7"/>
+				<imageExpression><![CDATA["C:\\Users\\Pedro\\Desktop\\Estágio Supervisionado I\\GVC System\\NetBeansProjects\\GVCSystem\\src\\gvcsystem\\img\\logo_gv.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="17" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="13" forecolor="#C8C8C8" backcolor="#C8C8C8" uuid="f8c3a709-0de0-4de6-9109-87b9d9badd42"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="219" y="2" width="123" height="10" uuid="4e71c7a1-be79-4380-8374-b2c3f0a3e248"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE CONTAS A PAGAR]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="10" splitType="Stretch">
+			<staticText>
+				<reportElement x="251" y="0" width="10" height="10" uuid="27b8c28c-f5de-40ca-b71c-77c110679ac0"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="22" height="10" uuid="6a479f8e-4a77-4726-8208-9a22eea2f777"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="0" width="126" height="10" uuid="9fbd23d3-bca9-4003-9ded-f9900c9cb764"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIÇÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="0" width="162" height="10" uuid="7bca2254-5402-44c8-a471-c184d7471e5e"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORNECEDOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="0" width="82" height="10" uuid="4f2bac3f-6537-4059-ab20-49e8032d2b2f"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CNPJ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="0" width="50" height="10" uuid="4720c03a-162c-47a7-8fa8-5b4ccc64e36c"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR (R$)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="0" width="103" height="10" uuid="eda48f59-869b-4ef2-bccd-f820cd0581fd"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DT. DE VENCIMENTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="10" splitType="Stretch">
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="0" y="0" width="22" height="10" uuid="82524968-8193-47e9-8687-4ce50a8f4f17"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_conta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="22" y="0" width="126" height="10" uuid="d030b89d-af74-4b60-ac97-25bb4dad1032"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="240" y="0" width="21" height="10" uuid="bb288bf1-3f6b-46a2-8512-c51d7bbf943e"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_forn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="423" y="0" width="69" height="10" uuid="b7dd3b4f-922f-4cd8-a38f-fd54455f242d"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cnpj_forn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="492" y="0" width="63" height="10" uuid="5fe4b1a1-df6a-4ccb-82b2-5f9d6aef7849"/>
+				<textElement textAlignment="Right">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="261" y="0" width="162" height="10" uuid="8fa05d42-2df0-4fda-8022-0dad0612cafc"/>
+				<textElement textAlignment="Center">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{razao_forn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="alternativeRowColor" mode="Opaque" x="148" y="0" width="92" height="10" uuid="bcdc0cef-7436-48e4-829e-e7dd4bc513c8"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dt_validade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="101" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="81" width="100" height="20" backcolor="#CCCCCC" uuid="5f7fedb8-9ec9-4bb6-9f71-a7dd54d03c59"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement mode="Opaque" x="-20" y="62" width="595" height="1" uuid="df49cc33-9ee4-43e1-b383-38d6ed68e89b"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="73" width="68" height="14" forecolor="#808080" uuid="d7fe16fd-2b48-4136-87ea-c4b0654293c8"/>
+				<textElement>
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Gerado por:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="59" y="73" width="39" height="28" uuid="003ece17-e823-4112-812a-b6b3d663a1ac"/>
+				<imageExpression><![CDATA["C:\\Users\\Pedro\\Desktop\\Estágio Supervisionado I\\GVC System\\NetBeansProjects\\GVCSystem\\src\\gvcsystem\\img\\gvc_system_logo_bg.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="87" width="68" height="14" forecolor="#808080" uuid="10e01daf-280a-42ee-b4b6-b7750f9d7869"/>
+				<textElement>
+					<font size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[GVC System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="73" width="100" height="14" uuid="d81cfe82-cec8-4285-8533-dc11a4524968"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AV AMÉRICA, 1767]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="87" width="135" height="14" uuid="c306a1f7-5886-4afc-88ea-8d09a4f51750"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIANORTE-PR  -  CEP: 87205-076]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="27" width="106" height="17" uuid="09fdcebd-f4a6-408a-88da-4b4006e6560e"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR TOTAL (R$):]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement x="433" y="27" width="100" height="17" forecolor="#339900" uuid="47fae118-a5cf-4f79-bbe4-13aa5db9c46c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("%.2f",$V{TOTAL_COUNT})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
